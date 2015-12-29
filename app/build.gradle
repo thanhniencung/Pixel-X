@@ -24,20 +24,20 @@ android {
 
         debug {
             buildConfigField "String", "ENDPOINT", '"https://api.500px.com"'
-            buildConfigField "String", "USERNAME", '"kiennv2937"'
-            buildConfigField "String", "PASSWORD", '"likeyou199@"'
-            buildConfigField "String", "CONSUMER_KEY_SECRET", '"jnKOookfxCzu4YMtH0yb9gdyOcA6rcrh39Hs5dR3"'
-            buildConfigField "String", "CONSUMER_KEY", '"rPv5iXqGa5QT5uQSNP8Y8Ja044qfUEN6pDCO2UFx"'
+            buildConfigField "String", "USERNAME", '"INSERT_YOUR_500px_USERNAME"'
+            buildConfigField "String", "PASSWORD", '"INSERT_YOUR_PASSWORD"'
+            buildConfigField "String", "CONSUMER_KEY_SECRET", '"INSERT_YOUR_CONSUMER_KEY_SECRET"'
+            buildConfigField "String", "CONSUMER_KEY", '"INSERT_YOUR_CONSUMER_KEY"'
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "ENDPOINT", '"https://api.500px.com"'
-            buildConfigField "String", "USERNAME", '"kiennv2937"'
-            buildConfigField "String", "PASSWORD", '"likeyou199@"'
-            buildConfigField "String", "CONSUMER_KEY_SECRET", '"jnKOookfxCzu4YMtH0yb9gdyOcA6rcrh39Hs5dR3"'
-            buildConfigField "String", "CONSUMER_KEY", '"rPv5iXqGa5QT5uQSNP8Y8Ja044qfUEN6pDCO2UFx"'
+            buildConfigField "String", "USERNAME", '"INSERT_YOUR_500px_USERNAME"'
+            buildConfigField "String", "PASSWORD", '"INSERT_YOUR_PASSWORD"'
+            buildConfigField "String", "CONSUMER_KEY_SECRET", '"INSERT_YOUR_CONSUMER_KEY_SECRET"'
+            buildConfigField "String", "CONSUMER_KEY", '"INSERT_YOUR_CONSUMER_KEY"'
         }
     }
 }
