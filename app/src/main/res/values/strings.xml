@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MVPDemo</string>
+    <string name="app_name">Pixel X</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -13,4 +13,11 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="empty_result">Empty result</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <string name="popular">POPULAR</string>
+    <string name="editors">EDITORS</string>
+    <string name="upcomming">UPCOMMING</string>
+    <string name="fresh">FRESH</string>
 </resources>

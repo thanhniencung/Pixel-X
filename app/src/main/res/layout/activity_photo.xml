@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/copyright"
+            android:textColor="@android:color/white"
+            android:text="Copyright"
+            android:background="@drawable/bg_btn_copyright"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <FrameLayout
+            android:layout_above="@id/copyright"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <uk.co.senab.photoview.PhotoView
+                android:id="@+id/my_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </uk.co.senab.photoview.PhotoView>
+
+            <include
+                android:id="@+id/loading"
+                layout="@layout/loading_layout" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+</LinearLayout>

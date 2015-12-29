@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#f4f4f4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        local:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:visibility="invisible"
+                android:paddingRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/loading"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <EditText
+                android:paddingRight="10dp"
+                android:layout_toLeftOf="@id/loading"
+                android:inputType="text"
+                android:textColor="#000"
+                android:id="@+id/searchBox"
+                android:imeOptions="actionSearch"
+                android:textColorHint="#999"
+                android:background="#f4f4f4"
+                android:paddingLeft="10dp"
+                android:textSize="17sp"
+                android:hint="Search photo..."
+                android:layout_width="match_parent"
+                android:layout_height="56dp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:background="#e4e4e4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+    <android.support.v7.widget.RecyclerView
+        android:clipToPadding="false"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

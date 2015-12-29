@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/welcomeView"
+    android:background="@drawable/img_welcome"
+    android:clipToPadding="false"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <thenextapp.mvpdemo.widget.AnimatedGroovyLogoView
+        android:id="@+id/animated_logo"
+        android:layout_width="225dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/app_name" />
+
+    <ImageView
+        android:src="@drawable/img_text_subtitle"
+        android:layout_marginTop="14dp"
+        android:adjustViewBounds="true"
+        android:id="@+id/logo_subtitle"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:contentDescription="@string/app_name" />
+
+</LinearLayout>

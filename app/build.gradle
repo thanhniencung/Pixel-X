@@ -1,27 +1,63 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
     defaultConfig {
         applicationId "thenextapp.mvpdemo"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
+
+        debug {
+            buildConfigField "String", "ENDPOINT", '"https://api.500px.com"'
+            buildConfigField "String", "USERNAME", '"kiennv2937"'
+            buildConfigField "String", "PASSWORD", '"likeyou199@"'
+            buildConfigField "String", "CONSUMER_KEY_SECRET", '"jnKOookfxCzu4YMtH0yb9gdyOcA6rcrh39Hs5dR3"'
+            buildConfigField "String", "CONSUMER_KEY", '"rPv5iXqGa5QT5uQSNP8Y8Ja044qfUEN6pDCO2UFx"'
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "ENDPOINT", '"https://api.500px.com"'
+            buildConfigField "String", "USERNAME", '"kiennv2937"'
+            buildConfigField "String", "PASSWORD", '"likeyou199@"'
+            buildConfigField "String", "CONSUMER_KEY_SECRET", '"jnKOookfxCzu4YMtH0yb9gdyOcA6rcrh39Hs5dR3"'
+            buildConfigField "String", "CONSUMER_KEY", '"rPv5iXqGa5QT5uQSNP8Y8Ja044qfUEN6pDCO2UFx"'
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.google.dagger:dagger:2.0'
+    provided 'com.google.dagger:dagger-compiler:2.0'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile 'io.reactivex:rxjava:1.0.10'
+    compile 'io.reactivex:rxandroid:0.24.0'
+    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.commit451:PhotoView:1.2.4'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
+    compile project(':pxsdk')
 }
