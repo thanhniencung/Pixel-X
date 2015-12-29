@@ -1,6 +1,4 @@
 # Pixel-X
-======
-
 This is sample Android app implement following MVP pattern .
 
 Libraries and tools included:
