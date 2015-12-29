@@ -22,4 +22,4 @@ Libraries and tools included:
 
 # Video Demo
 
-![Video demo](pixelx.gif)
+[Demo Youtube Link](https://www.youtube.com/watch?v=1Eo0f2RlXZg)
