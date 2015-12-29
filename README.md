@@ -14,4 +14,4 @@ Libraries and tools included:
 
 # Video Demo
 
-[![ScreenShot](https://www.youtube.com/watch?v=1Eo0f2RlXZg)
+[ScreenShot](https://www.youtube.com/watch?v=1Eo0f2RlXZg)
