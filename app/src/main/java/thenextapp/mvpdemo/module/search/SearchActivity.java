@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import rx.Observer;
@@ -62,15 +64,19 @@ public class SearchActivity extends BaseActivity implements ISearchView, MainHol
 
     private List<Photo> photoList;
     private SearchAdapter searchAdapter;
-    private SearchPresenter searchPresenter;
+
+    @Inject
+    SearchPresenter searchPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getActivityComponent().inject(this);
+
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
 
-        searchPresenter = new SearchPresenter(this);
         searchPresenter.attachView(this);
 
         initUI();

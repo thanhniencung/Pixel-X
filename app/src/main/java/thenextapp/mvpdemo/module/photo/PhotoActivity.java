@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import thenextapp.mvpdemo.R;
@@ -59,16 +61,20 @@ public class PhotoActivity extends BaseActivity implements IPhotoView{
 
     private PhotoViewAttacher mAttacher;
     private Photo photo;
-    private PhotoPresenter photoPresenter;
+
+    @Inject
+    PhotoPresenter photoPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        getActivityComponent().inject(this);
+
         setContentView(R.layout.activity_photo);
 
         ButterKnife.bind(this);
-        photoPresenter = new PhotoPresenter(this);
+
         photoPresenter.attachView(this);
 
         initUI();

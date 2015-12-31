@@ -21,6 +21,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import thenextapp.mvpdemo.R;
@@ -64,7 +66,7 @@ public class MainActivity extends BaseActivity implements IMainView,
     @Bind(R.id.loadMoreView)
     TextView loadMoreView;
 
-
+    @Inject
     MainPresenter mainPresenter;
 
     private GridLayoutManager gridLayoutManager;
@@ -77,10 +79,11 @@ public class MainActivity extends BaseActivity implements IMainView,
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        getActivityComponent().inject(this);
+
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mainPresenter = new MainPresenter(this);
         mainPresenter.attachView(this);
 
         initUI();

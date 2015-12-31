@@ -3,6 +3,8 @@ package thenextapp.mvpdemo.di.module;
 import android.app.Application;
 import android.content.res.Resources;
 
+import com.google.gson.Gson;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -25,6 +27,12 @@ public class ApplicationModule {
     @Singleton
     protected Application provideApplication() {
         return app;
+    }
+
+    @Provides
+    @Singleton
+    protected Gson provideGson() {
+        return new Gson();
     }
 
     @Provides
