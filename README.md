@@ -9,6 +9,8 @@ buildConfigField "String", "CONSUMER_KEY_SECRET", '"INSERT_YOUR_CONSUMER_KEY_SEC
 buildConfigField "String", "CONSUMER_KEY", '"INSERT_YOUR_CONSUMER_KEY"'
 ```
 
+![Demo](demo.png)
+
 Libraries and tools included:
 * [Muzei intro animation](http://www.muzei.co/)
 * [Dagger 2](http://google.github.io/dagger/)
