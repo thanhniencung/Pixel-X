@@ -75,6 +75,7 @@ public class MainActivity extends BaseActivity implements IMainView,
     private int currentPage = 1;
     private String feature = Feature.Type.POPULAR;
 
+    EndlessRecyclerOnScrollListener endlessRecyclerOnScrollListener;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +86,6 @@ public class MainActivity extends BaseActivity implements IMainView,
         ButterKnife.bind(this);
 
         mainPresenter.attachView(this);
-
         initUI();
 
         mainPresenter.getPhotos(currentPage, feature, false);
@@ -101,15 +101,14 @@ public class MainActivity extends BaseActivity implements IMainView,
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setHasFixedSize(true);
 
-        recyclerView.addOnScrollListener(new EndlessRecyclerOnScrollListener(
-                gridLayoutManager) {
+        endlessRecyclerOnScrollListener = new EndlessRecyclerOnScrollListener(gridLayoutManager) {
             @Override
             public void onLoadMore() {
                 currentPage++;
                 mainPresenter.getPhotos(currentPage, feature, true);
             }
-
-        });
+        };
+        recyclerView.addOnScrollListener(endlessRecyclerOnScrollListener);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -167,8 +166,18 @@ public class MainActivity extends BaseActivity implements IMainView,
                 break;
         }
 
+        if (endlessRecyclerOnScrollListener != null) {
+            recyclerView.removeOnScrollListener(endlessRecyclerOnScrollListener);
+            endlessRecyclerOnScrollListener = new EndlessRecyclerOnScrollListener(gridLayoutManager) {
+                @Override
+                public void onLoadMore() {
+                    currentPage++;
+                    mainPresenter.getPhotos(currentPage, feature, true);
+                }
+            };
+            recyclerView.addOnScrollListener(endlessRecyclerOnScrollListener);
+        }
         mainPresenter.getPhotos(currentPage, feature, false);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

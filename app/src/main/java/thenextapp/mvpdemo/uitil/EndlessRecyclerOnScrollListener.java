@@ -25,6 +25,10 @@ public abstract class EndlessRecyclerOnScrollListener extends
         this.mLinearLayoutManager = linearLayoutManager;
     }
 
+    public void setLoading(boolean loading) {
+        this.loading = loading;
+    }
+
     @Override
     public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
